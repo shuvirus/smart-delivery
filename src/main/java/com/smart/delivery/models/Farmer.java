@@ -1,17 +1,9 @@
 package com.smart.delivery.models;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import javax.persistence.*;
 
 @Entity
 @Table(name="suppliers")
-=======
-
->>>>>>> branch 'master' of https://github.com/shuvirus/smart-delivery.git
-=======
-
->>>>>>> dad36ea1b24dcf1e6e3d1984036e6e2997a76ea0
 public class Farmer {
 
 	@Id
