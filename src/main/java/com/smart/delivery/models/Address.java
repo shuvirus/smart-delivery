@@ -1,13 +1,10 @@
 package com.smart.delivery.models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -28,9 +25,10 @@ public class Address {
 	@Column(name="mobile_no")
 	private long MobileNo;
 
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinTable(name="suppliers", joinColumns=@JoinColumn(name="Id"))
+	@OneToOne(mappedBy = "address" )
 	private Farmer farmer;
+	
+	
 	
 	public Address() {
 

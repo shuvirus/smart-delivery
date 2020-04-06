@@ -17,15 +17,19 @@ public class Farmer {
 	@Column(name="last_name")
 	private String lastName;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinTable(name="address", joinColumns=@JoinColumn(name="Id"))
-	private Address address;
+	@Column(name="login_id")
+	private String loginId;
 	
+	@Column(name="password")
+	private String password;
+
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="address_id",referencedColumnName = "Id")
+	private Address address;
 	
 	public Farmer() {
 		
 	}
-	
 	public Farmer(String firstName, String lastName, long mobileNo, Address address) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -67,6 +71,7 @@ public class Farmer {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+	
 
 	@Override
 	public String toString() {
